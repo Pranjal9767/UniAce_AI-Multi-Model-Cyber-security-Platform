@@ -6,7 +6,9 @@ app = FastAPI(title="UniAce AI Backend", version="1.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # For development
+    allow_origins=[
+        "https://pranjal9767.github.io",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
