@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniAce AI — Autonomous Cyber Defense & AI Threat Intelligence</title>
+  <meta name="description"
+    content="Next-generation AI cyber defense platform providing real-time detection for Email Phishing, SMS Scams, Malicious URLs, Image Forgeries, and Video Deepfakes.">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Spline 3D Viewer ESM Script -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.80/build/spline-viewer.js"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <!-- Full-screen Spline Robot Background -->
+  <div class="spline-background" aria-hidden="true">
+    <spline-viewer url="https://prod.spline.design/rE76a2pRS-SsT2IH/scene.splinecode" logo-visibility="hidden"></spline-viewer>
+  </div>
+
+  <!-- Dynamic Canvas Neural Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Ambient Radial Glows -->
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <span>Uni<span class="text-gradient">Ace AI</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+
+          <li><a href="#features" class="nav-link">AI Defense Modules</a></li>
+          <li><a href="#playground" class="nav-link">Live Scanner</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="system-status">
+          <div class="status-dot"></div>
+          <span>DEFENSE GRID ACTIVE</span>
+        </div>
+
+        <button id="sound-toggle-btn" class="sound-toggle" title="Toggle UI Sound Effects">
+          <i data-lucide="volume-2"></i>
+        </button>
+
+        <a href="#playground" class="btn btn-primary btn-sm">
+          <i data-lucide="scan"></i>
+          <span>Launch Scanner</span>
+        </a>
+
+        <button id="mobile-menu-btn" class="mobile-toggle" aria-label="Toggle menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="sparkle">✦</span>
+          <span>AUTONOMOUS QUANTUM DEFENSE ENGINE v4.2</span>
+        </div>
+
+        <h1 class="hero-title">
+          Next-Gen AI Protection For <span class="text-gradient-purple">Digital Frontiers</span>
+        </h1>
+
+        <p class="hero-description">
+          UniAce AI deploys multi-layered neural classifiers to detect and mitigate Zero-Day Email Phishing, SMS Scams,
+          Malicious URLs, Image Forgeries, and Video Deepfakes with sub-millisecond latency.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#playground" class="btn btn-primary">
+            <i data-lucide="cpu"></i>
+            <span>Test Security Scanner</span>
+          </a>
+
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <span class="metric-val text-gradient">99.98%</span>
+            <span class="metric-lbl">AI Detection Accuracy</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-val text-gradient">&lt; 3.8ms</span>
+            <span class="metric-lbl">Threat Latency Response</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-val text-gradient">14.8M+</span>
+            <span class="metric-lbl">Daily Mitigations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Custom Three.js 3D Element -->
+      <div class="hero-3d-stage">
+        <div id="hero-3d-container"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 5 Security Feature Cards Section -->
+  <section id="features" class="reveal-on-scroll">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <div class="section-tag">
+          <i data-lucide="shield"></i>
+          <span>PROTECTION MATRIX</span>
+        </div>
+        <h2 class="section-title">5 Core AI Defense <span class="text-gradient-purple">Modules</span></h2>
+        <p class="section-subtitle">Engineered with specialized neural networks to block social engineering, synthetic
+          media, and malicious vectors before execution.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1: Email Phishing Detection -->
+        <div class="glass-card feature-card">
+          <div>
+            <div class="feature-icon-wrapper">
+              <i data-lucide="mail-warning" style="width:28px; height:28px;"></i>
+            </div>
+            <h3 class="feature-title">Email Phishing Detection</h3>
+            <p class="feature-desc">Scans raw email headers, SPF/DKIM record anomalies, NLP sentiment coercion,
+              zero-width character spoofing, and malicious payload attachments.</p>
+
+            <ul class="feature-specs">
+              <li><i data-lucide="check-circle-2"></i> NLP Intent & Urgency Classifier</li>
+              <li><i data-lucide="check-circle-2"></i> Domain Typosquatting Inspection</li>
+              <li><i data-lucide="check-circle-2"></i> Sandbox Attachment Detonation</li>
+            </ul>
+          </div>
+
+          <div class="feature-card-footer">
+            <a href="#playground" class="btn btn-secondary btn-sm" style="width:100%;">
+              <span>Test Email Scanner</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Feature 2: SMS Scam Detection -->
+        <div class="glass-card feature-card">
+          <div>
+            <div class="feature-icon-wrapper">
+              <i data-lucide="message-square-warning" style="width:28px; height:28px;"></i>
+            </div>
+            <h3 class="feature-title">SMS Scam & Smishing Inspector</h3>
+            <p class="feature-desc">Analyzes incoming text messages for banking impersonation triggers, suspicious
+              shortlink expansion, toll-fraud numbers, and urgency traps.</p>
+
+            <ul class="feature-specs">
+              <li><i data-lucide="check-circle-2"></i> Real-time Shortlink Unmasking</li>
+              <li><i data-lucide="check-circle-2"></i> Sender Reputation Scoring</li>
+              <li><i data-lucide="check-circle-2"></i> Smishing Pattern Heuristics</li>
+            </ul>
+          </div>
+
+          <div class="feature-card-footer">
+            <a href="#playground" class="btn btn-secondary btn-sm" style="width:100%;">
+              <span>Test SMS Inspector</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Feature 3: URL Scanner -->
+        <div class="glass-card feature-card">
+          <div>
+            <div class="feature-icon-wrapper">
+              <i data-lucide="globe" style="width:28px; height:28px;"></i>
+            </div>
+            <h3 class="feature-title">URL & Domain Scanner</h3>
+            <p class="feature-desc">Live webpage crawler evaluating SSL certificate authenticity, DNS record anomalies,
+              credential-harvesting forms, and hidden JavaScript redirect trees.</p>
+
+            <ul class="feature-specs">
+              <li><i data-lucide="check-circle-2"></i> Zero-Hour Malicious URL Blocking</li>
+              <li><i data-lucide="check-circle-2"></i> SSL/TLS Cipher Validation</li>
+              <li><i data-lucide="check-circle-2"></i> Phishing Redirection Tree Map</li>
+            </ul>
+          </div>
+
+          <div class="feature-card-footer">
+            <a href="#playground" class="btn btn-secondary btn-sm" style="width:100%;">
+              <span>Test URL Scanner</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Feature 4: Image Analysis -->
+        <div class="glass-card feature-card">
+          <div>
+            <div class="feature-icon-wrapper">
+              <i data-lucide="image" style="width:28px; height:28px;"></i>
+            </div>
+            <h3 class="feature-title">Image Forgery Analysis</h3>
+            <p class="feature-desc">Visual forensics engine scrutinizing EXIF metadata, GAN/Diffusion synthetic
+              artifacts, error level analysis (ELA), and steganographic payload embeddings.</p>
+
+            <ul class="feature-specs">
+              <li><i data-lucide="check-circle-2"></i> Synthetic GAN Generation Check</li>
+              <li><i data-lucide="check-circle-2"></i> Metadata & EXIF Integrity Audit</li>
+              <li><i data-lucide="check-circle-2"></i> Steganography Payload Scans</li>
+            </ul>
+          </div>
+
+          <div class="feature-card-footer">
+            <a href="#playground" class="btn btn-secondary btn-sm" style="width:100%;">
+              <span>Test Image Forensics</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Feature 5: Video Deepfake Detection -->
+        <div class="glass-card feature-card">
+          <div>
+            <div class="feature-icon-wrapper">
+              <i data-lucide="video" style="width:28px; height:28px;"></i>
+            </div>
+            <h3 class="feature-title">Video Deepfake Detection</h3>
+            <p class="feature-desc">Frame-by-frame deep neural visual inspector detecting facial landmark warping,
+              audio-lip sync mismatch, temporal glitching, and synthetic facial swaps.</p>
+
+            <ul class="feature-specs">
+              <li><i data-lucide="check-circle-2"></i> Facial Landmark Coherence Test</li>
+              <li><i data-lucide="check-circle-2"></i> Audio Phoneme-Viseme Sync</li>
+              <li><i data-lucide="check-circle-2"></i> Biological Pulse (rPPG) Sensing</li>
+            </ul>
+          </div>
+
+          <div class="feature-card-footer">
+            <a href="#playground" class="btn btn-secondary btn-sm" style="width:100%;">
+              <span>Test Deepfake Detector</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Security Playground / Scanner Demo Section -->
+  <section id="playground" class="scanner-section reveal-on-scroll">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <div class="section-tag">
+          <i data-lucide="terminal"></i>
+          <span>LIVE SANDBOX PLAYGROUND</span>
+        </div>
+        <h2 class="section-title">Interactive AI <span class="text-gradient">Threat Playground</span></h2>
+        <p class="section-subtitle">Test any suspicious payload, text, URL, image, or video stream live using Uniace's
+          real-time inspection engines.</p>
+      </div>
+
+      <div class="scanner-box glass-panel">
+        <!-- Tool Tabs -->
+        <div class="scanner-tabs">
+          <button class="scanner-tab active" data-tool="email">
+            <i data-lucide="mail"></i> Email Phishing
+          </button>
+          <button class="scanner-tab" data-tool="sms">
+            <i data-lucide="message-square"></i> SMS Scam
+          </button>
+          <button class="scanner-tab" data-tool="url">
+            <i data-lucide="link"></i> URL Scanner
+          </button>
+          <button class="scanner-tab" data-tool="image">
+            <i data-lucide="image"></i> Image Forgery
+          </button>
+          <button class="scanner-tab" data-tool="video">
+            <i data-lucide="video"></i> Video Deepfake
+          </button>
+        </div>
+
+        <div class="scanner-body">
+          <!-- Input Area -->
+          <div class="scanner-input-area">
+            <div class="input-label">
+              <span id="scan-input-label">Email Header & Body Text Payload</span>
+              <div class="preset-buttons" id="scan-preset-btns">
+                <!-- Preset buttons injected by js/scanner.js -->
+              </div>
+            </div>
+
+            <div id="scan-input-container">
+              <!-- Dynamic input field rendered by js/scanner.js -->
+            </div>
+
+            <button id="scan-action-btn" class="btn btn-primary">
+              <i data-lucide="search"></i>
+              <span>Run AI Security Scan</span>
+            </button>
+          </div>
+
+          <!-- Results Area -->
+          <div class="scan-results-area" id="scan-results-content">
+            <!-- Idle or Verdict content rendered by js/scanner.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics & Global Reach Section -->
+  <section class="stats-section reveal-on-scroll">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number text-gradient" data-target="14.8" data-suffix="M+" data-decimals="1">0M+</div>
+          <div class="stat-label">Daily Threats Neutralized</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number text-gradient" data-target="99.94" data-suffix="%" data-decimals="2">0%</div>
+          <div class="stat-label">Detection Accuracy Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number text-gradient" data-target="3.8" data-prefix="< " data-suffix="ms" data-decimals="1">
+            0ms</div>
+          <div class="stat-label">Average Response Latency</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number text-gradient" data-target="120" data-suffix="K+" data-decimals="0">0K+</div>
+          <div class="stat-label">Enterprise Endpoints Protected</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="reveal-on-scroll">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <div class="section-tag">
+          <i data-lucide="award"></i>
+          <span>TRUSTED BY ENTERPRISES</span>
+        </div>
+        <h2 class="section-title">Validated By <span class="text-gradient">Security Leaders</span></h2>
+        <p class="section-subtitle">See how chief information security officers and engineers rely on Uniace for
+          zero-trust defense.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="glass-card testimonial-card">
+          <div>
+            <div class="quote-icon"><i data-lucide="quote" style="width:32px; height:32px;"></i></div>
+            <p class="testimonial-text">"Uniace's deepfake detection caught a sophisticated CEO voice-clone phishing
+              attempt aimed at our finance team before any funds could be wire-transferred. Indispensable security."</p>
+          </div>
+          <div class="author-info">
+            <div class="author-avatar">SC</div>
+            <div class="author-details">
+              <h4>Sarah Chen</h4>
+              <p>CISO, Global Financial Tech</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card testimonial-card">
+          <div>
+            <div class="quote-icon"><i data-lucide="quote" style="width:32px; height:32px;"></i></div>
+            <p class="testimonial-text">"The sub-4ms response time on zero-day URL scanning allows us to inspect
+              millions of inbound user links without bottlenecking our API infrastructure."</p>
+          </div>
+          <div class="author-info">
+            <div class="author-avatar">MR</div>
+            <div class="author-details">
+              <h4>Marcus Reynolds</h4>
+              <p>Head of Cyber Defense, Enterprise Cloud</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card testimonial-card">
+          <div>
+            <div class="quote-icon"><i data-lucide="quote" style="width:32px; height:32px;"></i></div>
+            <p class="testimonial-text">"Integration was seamless. Their modular 3D telemetry dashboard gives our SOC
+              team real-time visibility into incoming smishing attacks across all regional gateways."</p>
+          </div>
+          <div class="author-info">
+            <div class="author-avatar">EK</div>
+            <div class="author-details">
+              <h4>Elena Kovacs</h4>
+              <p>Director of SecOps, BioHealth Systems</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section id="faq" class="reveal-on-scroll">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <div class="section-tag">
+          <i data-lucide="help-circle"></i>
+          <span>FREQUENTLY ASKED QUESTIONS</span>
+        </div>
+        <h2 class="section-title">Everything You Need <span class="text-gradient-purple">To Know</span></h2>
+        <p class="section-subtitle">Common questions regarding Uniace model architecture, zero-trust integration, and 3D
+          UI flexibility.</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item active">
+          <div class="faq-question">
+            <span>How does Uniace detect Zero-Day Email Phishing and Smishing?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Uniace utilizes fine-tuned Transformer models trained on over 500 million malicious payload samples. Rather
+            than relying solely on static blacklists, our engine evaluates NLP semantic intent, zero-width character
+            obfuscation, domain age heuristics, and real-time shortlink expansion.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What makes the Video Deepfake & Image Analysis engine so accurate?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Our visual forensics engine analyzes frame-level facial landmark warping, audio-lip sync phoneme mismatches,
+            and remote photoplethysmography (rPPG)—a technique that detects natural micro-blood flow changes in human
+            skin that synthetic AI models fail to replicate.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Is the 3D Hero Scene flexible for custom 3D models later?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Yes! The 3D stage in the hero section is built modularly with Three.js via `Hero3DScene`. It includes clean
+            hooks (`loadCustomGLTF`, `updateColors`) allowing you to easily swap the default holographic AI core with
+            custom `.gltf` or `.glb` 3D assets anytime in the future.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does Uniace integrate with enterprise SIEM & SOC workflows?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </div>
+          <div class="faq-answer">
+            Uniace provides gRPC and RESTful API endpoints for instant integration with major SIEM tools including
+            Splunk, Microsoft Sentinel, and Datadog, delivering automated threat alerts within <4ms. </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Is user data privacy guaranteed during live scans?</span>
+              <i data-lucide="chevron-down" class="faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+              Absoltely. All incoming scan payloads are processed in volatile zero-retention memory enclaves compliant
+              with SOC2 Type II, GDPR, and HIPAA standards. No sensitive text or media is stored permanently.
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="reveal-on-scroll">
+    <div class="container">
+      <div class="cta-banner glass-panel">
+        <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 1rem;">
+          Ready To Secure Your Digital Frontier?
+        </h2>
+        <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto 2.5rem auto;">
+          Deploy Uniace's autonomous threat intelligence grid across your enterprise endpoints in under 15 minutes.
+        </p>
+        <div style="display:flex; justify-content:center; gap:1.25rem; flex-wrap:wrap;">
+          <a href="#playground" class="btn btn-primary">
+            <i data-lucide="shield-alert"></i>
+            <span>Start Free Security Audit</span>
+          </a>
+          <a href="#dashboard" class="btn btn-glow-purple">
+            <i data-lucide="calendar"></i>
+            <span>Schedule Enterprise Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand-logo">
+            <div class="logo-icon">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <span>Uni<span class="text-gradient">Ace AI</span></span>
+          </a>
+          <p>Autonomous AI Cyber Defense platform protecting enterprises against zero-day phishing, smishing, synthetic
+            media, and deepfake exploits.</p>
+          <div class="system-status" style="display:inline-flex;">
+            <div class="status-dot"></div>
+            <span>GRID v4.2 OPERATIONAL</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>AI Modules</h4>
+          <ul class="footer-links">
+            <li><a href="#playground">Email Phishing Check</a></li>
+            <li><a href="#playground">SMS Scam Inspector</a></li>
+            <li><a href="#playground">URL Threat Scanner</a></li>
+            <li><a href="#playground">Image Forgery Analysis</a></li>
+            <li><a href="#playground">Video Deepfake Audit</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul class="footer-links">
+            <li><a href="#dashboard">Threat Analytics</a></li>
+            <li><a href="#hero">Quantum Shield Engine</a></li>
+            <li><a href="#faq">Documentation</a></li>
+            <li><a href="#faq">API Reference</a></li>
+            <li><a href="#faq">System Status</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Security & Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Compliance (SOC2 / ISO)</a></li>
+            <li><a href="#">Security Disclosure</a></li>
+            <li><a href="#">Trust Center</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Uniace Inc. All rights reserved. Designed with Apple-level precision and futuristic AI tech.</div>
+        <div class="footer-certifications">
+          <span class="cert-badge">SOC2 TYPE II</span>
+          <span class="cert-badge">ISO 27001</span>
+          <span class="cert-badge">GDPR COMPLIANT</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App JavaScript Modules -->
+  <script src="js/background-network.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/scanner.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+
+</html>

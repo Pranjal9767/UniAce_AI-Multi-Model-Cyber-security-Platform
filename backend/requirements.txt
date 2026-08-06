@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+torch
+transformers
+xgboost
+lightgbm
+scikit-learn
+python-multipart
+aiohttp
+opencv-python-headless
+pillow
+pydantic
