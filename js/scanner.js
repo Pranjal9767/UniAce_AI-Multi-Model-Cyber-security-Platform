@@ -213,7 +213,7 @@ class SecurityScanner {
       ? { url: content } 
       : { content: content };
 
-    fetch(`http://127.0.0.1:8000${endpoint}`, {
+    fetch(`https://uniace-ai-multi-model-cyber-security-us59.onrender.com${endpoint}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
