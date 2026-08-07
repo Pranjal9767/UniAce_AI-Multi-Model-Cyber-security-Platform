@@ -4,50 +4,28 @@ from models.model_manager import ModelManager
 class PhishingService:
     @staticmethod
     async def analyze_email(content: str):
-        @staticmethod
-async def analyze_email(content: str):
-    model = ModelManager.get_email_model()
+        model = ModelManager.get_email_model()
 
-    result = model(content[:512])[0]
+        result = model(content[:512])[0]
 
-    label = result["label"]
-    score = round(result["score"] * 100, 2)
+        label = result["label"]
+        score = round(result["score"] * 100, 2)
 
-    phishing = "phish" in label.lower()
+        phishing = "phish" in label.lower()
 
-    return {
-        "prediction": "Phishing Email" if phishing else "Safe Email",
-        "confidence_score": score,
-        "risk_level": "HIGH" if phishing else "LOW",
-        "explanation": f"AI model prediction: {label}",
-        "processing_time": 0.8
-    }
-    @staticmethod
-    async def analyze_sms(content: str):
-        await asyncio.sleep(1)
-        model = ModelManager.get_sms_model()
-        
-        if ".top" in content or "fee" in content.lower():
-            return {
-                "prediction": "Smishing SMS",
-                "confidence_score": 96.7,
-                "risk_level": "HIGH",
-                "explanation": "Pattern matches known USPS/Delivery smishing campaigns with suspicious TLDs.",
-                "processing_time": 0.8
-            }
         return {
-            "prediction": "Safe SMS",
-            "confidence_score": 98.2,
-            "risk_level": "LOW",
-            "explanation": "Context matches standard OTP/transactional notification.",
-            "processing_time": 0.7
+            "prediction": "Phishing Email" if phishing else "Safe Email",
+            "confidence_score": score,
+            "risk_level": "HIGH" if phishing else "LOW",
+            "explanation": f"AI model prediction: {label}",
+            "processing_time": 0.8
         }
 
     @staticmethod
     async def analyze_url(url: str):
         await asyncio.sleep(1.5)
         model = ModelManager.get_url_model()
-        
+
         if ".top" in url or "login" in url.lower():
             return {
                 "prediction": "Phishing URL",
