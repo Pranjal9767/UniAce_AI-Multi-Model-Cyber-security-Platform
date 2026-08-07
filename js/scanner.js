@@ -218,8 +218,16 @@ class SecurityScanner {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     })
-    .then(res => res.json())
-    .then(data => {
+    .then(async (res) => {
+    const data = await res.json();
+
+    if (!res.ok) {
+        throw new Error(JSON.stringify(data));
+    }
+
+    return data;
+})
+.then((data) => {
       clearInterval(interval);
       if (progressBar) progressBar.style.width = `100%`;
       if (percentageEl) percentageEl.innerText = `100%`;
