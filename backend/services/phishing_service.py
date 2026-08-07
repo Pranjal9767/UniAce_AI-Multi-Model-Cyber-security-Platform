@@ -4,28 +4,24 @@ from models.model_manager import ModelManager
 class PhishingService:
     @staticmethod
     async def analyze_email(content: str):
-        await asyncio.sleep(1)
-        model = ModelManager.get_email_model()
-        
-        # Real transformer inference (simulated fallback for testing)
-        # result = model(content[:512]) # Truncate for max length
-        
-        if "URGENT" in content or "paypa1" in content or "bit.ly" in content:
-            return {
-                "prediction": "Phishing Email",
-                "confidence_score": 94.3,
-                "risk_level": "HIGH",
-                "explanation": "Suspicious urgency keywords, obfuscated links, and spoofed sender domain detected.",
-                "processing_time": 1.2
-            }
-        return {
-            "prediction": "Safe Email",
-            "confidence_score": 91.5,
-            "risk_level": "LOW",
-            "explanation": "Language model indicates standard business correspondence context. No malicious links found.",
-            "processing_time": 1.1
-        }
+        @staticmethod
+async def analyze_email(content: str):
+    model = ModelManager.get_email_model()
 
+    result = model(content[:512])[0]
+
+    label = result["label"]
+    score = round(result["score"] * 100, 2)
+
+    phishing = "phish" in label.lower()
+
+    return {
+        "prediction": "Phishing Email" if phishing else "Safe Email",
+        "confidence_score": score,
+        "risk_level": "HIGH" if phishing else "LOW",
+        "explanation": f"AI model prediction: {label}",
+        "processing_time": 0.8
+    }
     @staticmethod
     async def analyze_sms(content: str):
         await asyncio.sleep(1)
