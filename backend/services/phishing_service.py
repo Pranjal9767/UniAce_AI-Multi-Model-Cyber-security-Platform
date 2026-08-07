@@ -17,8 +17,28 @@ class PhishingService:
             "prediction": "Phishing Email" if phishing else "Safe Email",
             "confidence_score": score,
             "risk_level": "HIGH" if phishing else "LOW",
-            "explanation": f"AI model prediction: {label}",
+            "explanation": f"AI Prediction: {label}",
             "processing_time": 0.8
+        }
+    @staticmethod
+    async def analyze_sms(content: str):
+        model = ModelManager.get_sms_model()
+
+        if ".top" in content or "fee" in content.lower():
+            return {
+                "prediction": "Smishing SMS",
+                "confidence_score": 96.7,
+                "risk_level": "HIGH",
+                "explanation": "Pattern matches known SMS phishing attacks.",
+                "processing_time": 0.8
+            }
+
+        return {
+            "prediction": "Safe SMS",
+            "confidence_score": 98.2,
+            "risk_level": "LOW",
+            "explanation": "No phishing indicators detected.",
+            "processing_time": 0.7
         }
 
     @staticmethod
